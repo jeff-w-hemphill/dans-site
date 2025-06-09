@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Barbershop Name</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #eee;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      nav {
+        background-color: #111;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+      }
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #ddd;
+      }
+      header {
+        position: relative;
+        text-align: center;
+        color: #fff;
+      }
+      .carousel {
+        position: relative;
+        height: 600px;
+        overflow: hidden;
+      }
+      .carousel img {
+        width: 100%;
+        height: 600px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+      }
+      .carousel img.active {
+        opacity: 1;
+        z-index: 1;
+      }
+      .carousel-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.05);
+        border: none;
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 2rem;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        z-index: 2;
+        transition: background 0.3s, color 0.3s;
+      }
+      .carousel-button:hover {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+      }
+      .carousel-button.prev {
+        left: 20px;
+      }
+      .carousel-button.next {
+        right: 20px;
+      }
+      .header-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        z-index: 3;
+        background: rgba(0, 0, 0, 0.6);
+        padding: 2rem;
+        border-radius: 10px;
+      }
+      .header-content h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #fff;
+      }
+      .header-content p {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        color: #ccc;
+      }
+      .btn {
+        background-color: transparent;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border: 2px solid #fff;
+        border-radius: 5px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s, color 0.3s;
+        display: inline-block;
+      }
+      .btn:hover {
+        background-color: #fff;
+        color: #000;
+      }
+      section {
+        padding: 3rem 1rem;
+        max-width: 800px;
+        margin: auto;
+      }
+      h2 {
+        color: #fff;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .services ul {
+        list-style: none;
+        padding: 0;
+      }
+      .services li {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #444;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 300px;
+        border: none;
+      }
+      footer {
+        background-color: #111;
+        color: #ccc;
+        text-align: center;
+        padding: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#services">Services</a>
+      <a href="#instagram">Instagram</a>
+      <a href="#location">Hours</a>
+    </nav>
+
+    <header>
+      <div class="carousel">
+        <img src="barber1.jpg" class="active" alt="Barbershop Image 1" />
+        <img src="barber2.jpg" alt="Barbershop Image 2" />
+        <img
+          src="https://via.placeholder.com/1200x400?text=Photo+3"
+          alt="Barbershop Image 3"
+        />
+        <button class="carousel-button prev">&#10094;</button>
+        <button class="carousel-button next">&#10095;</button>
+      </div>
+      <div class="header-content">
+        <h1>Barbershop Name</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque ut
+          neque in odio tempus placerat.
+        </p>
+        <a href="#booking" class="btn">Book Now</a>
+      </div>
+    </header>
+
+    <section class="about">
+      <h2>About Us</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus auctor,
+        metus nec convallis aliquet, tellus risus ultricies lorem, ut tincidunt
+        sem magna nec magna. Integer sagittis, lorem at accumsan fermentum, sem
+        purus imperdiet justo, a feugiat libero velit vel nisl. Curabitur
+        vestibulum, nulla ac porttitor fringilla, enim sapien vehicula odio, nec
+        malesuada est lectus at quam. Donec pretium lectus vitae magna feugiat,
+        ut volutpat risus euismod. Mauris dapibus, tortor non pretium tempor,
+        ligula elit gravida odio, sit amet laoreet ipsum sapien at odio.
+      </p>
+    </section>
+
+    <section id="services" class="services">
+      <h2>Services</h2>
+      <ul>
+        <li><span>Haircut</span><span>$XX</span></li>
+        <li><span>Beard Trim</span><span>$XX</span></li>
+        <li><span>Hot Towel Shave</span><span>$XX</span></li>
+        <li><span>Cut + Beard Package</span><span>$XX</span></li>
+      </ul>
+    </section>
+
+    <section id="booking">
+      <h2>Book an Appointment</h2>
+      <p>
+        Ready to look your best? Use our online booking system to schedule your
+        visit.
+      </p>
+      <a href="#" class="btn">Reserve Your Spot</a>
+    </section>
+
+    <section id="location" class="location">
+      <h2>Visit Us</h2>
+      <p>1234 Placeholder Ave, Your City, ST 00000</p>
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093743!2d144.9537353159049!3d-37.8172094420211!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f1f3c7e3%3A0x5045675218ce6e0!2sVictoria!5e0!3m2!1sen!2sus!4v1615859408123!5m2!1sen!2sus"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+      <div style="margin-top: 2rem">
+        <h3 style="color: #fff; font-size: 1.5rem; margin-bottom: 1rem">
+          Hours
+        </h3>
+        <ul style="list-style: none; padding: 0; line-height: 1.8">
+          <li><strong>Monday – Friday:</strong> 9:00 AM – 6:00 PM</li>
+          <li><strong>Saturday:</strong> 10:00 AM – 4:00 PM</li>
+          <li><strong>Sunday:</strong> Closed</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="instagram">
+      <h2>Follow the Barbers</h2>
+      <p>Check out their latest cuts, styles, and vibes:</p>
+      <ul style="list-style: none; padding: 0">
+        <li style="margin-bottom: 1rem">
+          <a href="https://instagram.com/barber1" target="_blank" class="btn">
+            <i class="fab fa-instagram" style="margin-right: 0.5rem"></i>
+            Daniel
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/barber2" target="_blank" class="btn">
+            <i class="fab fa-instagram" style="margin-right: 0.5rem"></i>Miguel
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 Barbershop Name. All rights reserved.</p>
+      <p>Email: contact@placeholder.com | Instagram: @barbershopname</p>
+    </footer>
+
+    <script>
+      let currentIndex = 0;
+      const images = document.querySelectorAll(".carousel img");
+      const total = images.length;
+
+      const showImage = (index) => {
+        images.forEach((img, i) => {
+          img.classList.toggle("active", i === index);
+        });
+      };
+
+      const nextImage = () => {
+        currentIndex = (currentIndex + 1) % total;
+        showImage(currentIndex);
+      };
+
+      const prevImage = () => {
+        currentIndex = (currentIndex - 1 + total) % total;
+        showImage(currentIndex);
+      };
+
+      document
+        .querySelector(".carousel-button.next")
+        .addEventListener("click", nextImage);
+      document
+        .querySelector(".carousel-button.prev")
+        .addEventListener("click", prevImage);
+
+      setInterval(nextImage, 4000);
+    </script>
+  </body>
+</html>
